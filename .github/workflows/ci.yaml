@@ -14,6 +14,8 @@ jobs:
       - name: Print build message
         run: echo "Build job completed!"
 
+      
+
   test:
     name: Test
     runs-on: ubuntu-latest
@@ -21,6 +23,12 @@ jobs:
     steps:
       - name: Print test message
         run: echo "Test job completed!"
+      
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Hello World script
+        run: bash hello.sh  
 
   deploy:
     name: Deploy
